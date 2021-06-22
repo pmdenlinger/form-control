@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var mute = false
+    @State var volume: Float = 40
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        Form(content: {
+//            Form like content...
+//            Consists of toggle, stepper, etc.
+            
+            Toggle("Mute", isOn: $mute)
+            Slider(value: $volume, in: 0...10)
+            
+            Text("Volume")
+        })
     }
 }
 
